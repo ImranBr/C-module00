@@ -23,10 +23,10 @@ class Phonebook
         int _nextIndex;
     
     public:
-        PhoneBook();
+        Phonebook();
 
         void add();
         void search() const;
-}
+};
 
 #endif

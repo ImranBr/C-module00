@@ -38,6 +38,6 @@ class Contact
         std::string getNickname() const;
         std::string getPhoneNumber() const;
         std::string getDarkestSecret() const;
-}
+};
 
 #endif
