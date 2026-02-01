@@ -26,7 +26,7 @@ class Phonebook
         Phonebook();
 
         void add();
-        // void search() const;
+        void search() const;
 };
 
 #endif
