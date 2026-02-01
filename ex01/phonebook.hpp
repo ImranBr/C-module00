@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42.fr>                  #+#  +:+       +#+        */
+/*   By: ibarbouc <ibarbouc@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-01-31 15:31:00 by user              #+#    #+#             */
-/*   Updated: 2026-01-31 15:31:00 by user             ###   ########.fr       */
+/*   Created: 2026-01-31 19:43:31 by ibarbouc          #+#    #+#             */
+/*   Updated: 2026-01-31 19:43:31 by ibarbouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Phonebook
         Phonebook();
 
         void add();
-        void search() const;
+        // void search() const;
 };
 
 #endif

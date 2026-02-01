@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibarbouc <ibarbouc@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-01-29 20:51:18 by ibarbouc          #+#    #+#             */
-/*   Updated: 2026-01-29 20:51:18 by ibarbouc         ###   ########.fr       */
+/*   Created: 2026-01-31 19:43:55 by ibarbouc          #+#    #+#             */
+/*   Updated: 2026-01-31 19:43:55 by ibarbouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "contact.hpp"
 
-Contact::Contact() : _firstName(""), _lastName(""), _nickname(""), _phoneNumber(""), _darkestSecret("") {}
+Contact::Contact() {}
 
 void    Contact::setFirstName(const std::string& firstName) 
 {

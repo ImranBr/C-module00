@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: user <user@student.42.fr>                  #+#  +:+       +#+        */
+/*   By: ibarbouc <ibarbouc@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-01-30 10:50:40 by user              #+#    #+#             */
-/*   Updated: 2026-01-30 10:50:40 by user             ###   ########.fr       */
+/*   Created: 2026-01-31 19:43:50 by ibarbouc          #+#    #+#             */
+/*   Updated: 2026-01-31 19:43:50 by ibarbouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 
 #include <string>
+#include <iostream>
 
 class Contact
 {
