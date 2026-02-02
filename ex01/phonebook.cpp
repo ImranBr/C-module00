@@ -34,12 +34,14 @@ void Phonebook::add()
 	std::string firstName, lastName, nickname, phoneNumber, darkestSecret;
 
 	std::cout << "Enter First Name: ";
-	std::getline(std::cin, firstName);
+	if (!std::getline(std::cin, firstName))
+		return ;
 	while (firstName.empty() || !isPrintableString(firstName))
 	{
 		std::cout << "Error! The first name must not be empty and must contain only printable characters." << std::endl;
 		std::cout << "Enter First Name: ";
-		std::getline(std::cin, firstName);
+		if (!std::getline(std::cin, firstName))
+			return ;
 	}
 	std::cout << "Enter Last Name: ";
 	std::getline(std::cin, lastName);
