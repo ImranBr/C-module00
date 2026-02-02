@@ -14,6 +14,8 @@
 #define PHONEBOOK_HPP
 
 #include "contact.hpp"
+#include <cctype>
+#include <iomanip>
 
 class Phonebook
 {

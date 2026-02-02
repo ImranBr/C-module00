@@ -26,10 +26,10 @@ int	main()
             break ;
         if (input == "ADD")
             phonebook.add();
-        // else if (input == "SEARCH")
-        // {
-        //     phonebook.search();
-        // }
+        else if (input == "SEARCH")
+        {
+            phonebook.search();
+        }
         else if (input == "EXIT")
         {
             std::cout << "Exiting the program." << std::endl;
