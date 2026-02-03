@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ibarbouc <ibarbouc@student.42.fr>          #+#  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-02-02 21:00:59 by ibarbouc          #+#    #+#             */
-/*   Updated: 2026-02-02 21:00:59 by ibarbouc         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
 #include <iostream>
 #include <string>
 #include <iomanip>
@@ -20,6 +8,16 @@ bool	isPrintableString(const std::string &str)
 	for (size_t i = 0; i < str.length(); i++)
 	{
 		if (!isprint(static_cast<unsigned char>(str[i])))
+			return (false);
+	}
+	return (true);
+}
+
+bool	isOnlyWhitespace(const std::string &str)
+{
+	for (size_t i = 0; i < str.length(); i++)
+	{
+		if (!isspace(static_cast<unsigned char>(str[i])))
 			return (false);
 	}
 	return (true);
@@ -36,7 +34,7 @@ void Phonebook::add()
 	std::cout << "Enter First Name: ";
 	if (!std::getline(std::cin, firstName))
 		return ;
-	while (firstName.empty() || !isPrintableString(firstName))
+	while (firstName.empty() || !isPrintableString(firstName) || isOnlyWhitespace(firstName))
 	{
 		std::cout << "Error! The first name must not be empty and must contain only printable characters." << std::endl;
 		std::cout << "Enter First Name: ";
@@ -44,28 +42,34 @@ void Phonebook::add()
 			return ;
 	}
 	std::cout << "Enter Last Name: ";
-	std::getline(std::cin, lastName);
-	while (lastName.empty() || !isPrintableString(lastName))
+	if (!std::getline(std::cin, lastName))
+		return ;
+	while (lastName.empty() || !isPrintableString(lastName) || isOnlyWhitespace(lastName))
 	{
 		std::cout << "Error! The last name must not be empty and must contain only printable characters." << std::endl;
 		std::cout << "Enter Last Name: ";
-		std::getline(std::cin, lastName);
+		if (!std::getline(std::cin, lastName))
+			return ;
 	}
 	std::cout << "Enter Nickname: ";
-	std::getline(std::cin, nickname);
-	while (nickname.empty() || !isPrintableString(nickname))
+	if (!std::getline(std::cin, nickname))
+		return ;
+	while (nickname.empty() || !isPrintableString(nickname) || isOnlyWhitespace(nickname))
 	{
 		std::cout << "Error! The nickname must not be empty and must contain only printable characters." << std::endl;
 		std::cout << "Enter Nickname: ";
-		std::getline(std::cin, nickname);
+		if (!std::getline(std::cin, nickname))
+			return ;
 	}
 	std::cout << "Enter Phone Number: ";
-	std::getline(std::cin, phoneNumber);
+	if (!std::getline(std::cin, phoneNumber))
+		return ;
 	while (phoneNumber.empty() || !isPrintableString(phoneNumber))
 	{
 		std::cout << "Error! The phone number must not be empty and must contain only printable characters." << std::endl;
 		std::cout << "Enter Phone Number: ";
-		std::getline(std::cin, phoneNumber);
+		if (!std::getline(std::cin, phoneNumber))
+			return ;
 	}
 		for (int i = 0; i < (int)phoneNumber.length(); i++)
 		{
@@ -73,17 +77,20 @@ void Phonebook::add()
 			{
 				std::cout << "Error! The phone number must contain only digits." << std::endl;
 				std::cout << "Enter Phone Number: ";
-				std::getline(std::cin, phoneNumber);
+				if (!std::getline(std::cin, phoneNumber))
+					return ;
 				i = -1;
 			}
 		}
 	std::cout << "Enter Darkest Secret: ";
-	std::getline(std::cin, darkestSecret);
-	while (darkestSecret.empty() || !isPrintableString(darkestSecret))
+	if (!std::getline(std::cin, darkestSecret))
+		return ;
+	while (darkestSecret.empty() || !isPrintableString(darkestSecret) || isOnlyWhitespace(darkestSecret))
 	{
 		std::cout << "Error! The darkest secret must not be empty and must contain only printable characters." << std::endl;
 		std::cout << "Enter Darkest Secret: ";
-		std::getline(std::cin, darkestSecret);
+		if (!std::getline(std::cin, darkestSecret))
+			return ;
 	}
 	_contacts[_nextIndex].setFirstName(firstName);
 	_contacts[_nextIndex].setLastName(lastName);

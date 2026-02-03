@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
 #include <iostream>
 #include <string>
 
@@ -27,18 +27,14 @@ int	main()
         if (input == "ADD")
             phonebook.add();
         else if (input == "SEARCH")
-        {
             phonebook.search();
-        }
         else if (input == "EXIT")
         {
             std::cout << "Exiting the program." << std::endl;
             break ;
         }
         else
-        {
             std::cout << "Invalid command. Please try again." << std::endl;
-        }
     }
     return (0);
 }
